@@ -1,0 +1,64 @@
+GIT
+  remote: git://github.com/kkosuge/bank_job.git
+  revision: 0908e082d4c196a0fc8335351855874eb88b1549
+  specs:
+    bank_job (0.0.1)
+      hashie (~> 2.0.5)
+      mechanize (~> 2.7)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    domain_name (0.5.16)
+      unf (>= 0.0.5, < 1.0.0)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
+    google_drive (0.3.7)
+      nokogiri (>= 1.4.4, != 1.5.2, != 1.5.1)
+      oauth (>= 0.3.6)
+      oauth2 (>= 0.5.0)
+    hashie (2.0.5)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
+    jwt (0.1.11)
+      multi_json (>= 1.5)
+    mechanize (2.7.3)
+      domain_name (~> 0.5, >= 0.5.1)
+      http-cookie (~> 1.0)
+      mime-types (~> 2.0)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (~> 2.5, >= 2.5.2)
+      nokogiri (~> 1.4)
+      ntlm-http (~> 0.1, >= 0.1.1)
+      webrobots (>= 0.0.9, < 0.2)
+    mime-types (2.1)
+    mini_portile (0.5.2)
+    multi_json (1.8.4)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
+    net-http-digest_auth (1.4)
+    net-http-persistent (2.9.4)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
+    ntlm-http (0.1.1)
+    oauth (0.4.7)
+    oauth2 (0.9.3)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 0.1.8)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
+    rack (1.5.2)
+    rake (10.1.1)
+    unf (0.1.3)
+      unf_ext
+    unf_ext (0.0.6)
+    webrobots (0.1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bank_job!
+  google_drive
+  rake
