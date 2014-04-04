@@ -17,16 +17,30 @@ namespace :bank do
 
     total = 0
     count = 2
-    ws[ws.num_cols + 1, 1] = Time.now.strftime('%Y/%m/%d')
+    rows  = ws.num_rows + 1
+    ws[rows, 1] = Time.now.strftime('%Y/%m/%d')
     bank_list.each do |list|
       deposits = list[:deposits].gsub(%r{円|,},"").to_i
-      ws[ws.num_cols + 1, count] = deposits
+      ws[rows, count] = deposits
       count += 1
       total += deposits
     end
-    ws[ws.num_cols + 1, count] = total
+    ws[rows, count] = total
     ws.save
     ws.reload
+  end
+
+  namespace :spredseet do
+    desc 'Googleスプレッドシートの現状'
+    task :test do
+      google_drive_conf = config['google_drive']
+      session = GoogleDrive.login(google_drive_conf['mail'], google_drive_conf['password'])
+      # First worksheet of
+      ws = session.spreadsheet_by_key(google_drive_conf['spreadsheet_by_key']).worksheets[0]
+      ws.rows.each do |row|
+        p row
+      end
+    end
   end
 end
 
